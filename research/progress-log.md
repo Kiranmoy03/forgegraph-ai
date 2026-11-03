@@ -31,12 +31,47 @@ The note reviews four peer-reviewed, open-access Springer journal papers, with a
 
 **Current direction:** Start with reproducible entity extraction experiments that preserve nested spans. Study relation extraction, graph construction and evidence-grounded question answering afterward.
 
+
+## 4 November 2026 — Dataset preparation
+
+**Notebook:** `ForgeGraph_02_Dataset_Preparation.ipynb`
+
+Completed:
+- Checked 1,076 maintenance records for repeated texts.
+- Identified two duplicate groups and retained 1,074 unique records.
+- Found 127 potentially similar record pairs using Jaccard similarity.
+- Grouped 156 related records into 54 connected groups.
+- Created a group-aware train/validation/test split.
+- Checked the distribution of entity categories and overlapping annotations.
+
+### Dataset split (v1)
+
+| Split | Records |
+| --- | ---: |
+| Training | 859 |
+| Validation | 107 |
+| Testing | 108 |
+
+All five entity categories are represented in each split. Similarity groups are kept separate across splits.
+
+Overlapping entities occur in 29.80% of training records, 30.84% of validation records, and 35.19% of test records.
+
+### Observations
+
+The Property category is rare, with only four annotations in each of the validation and test sets. Results for this category will need careful interpretation.
+
+The similarity checks are approximate and do not guarantee that every possible source of data leakage has been eliminated.
+
+
+
 ## Next tasks — Not yet completed
 
-- Examine exact and near-duplicate maintenance records and available benchmark split guidance.
-- Decide on broad versus fine-grained entity labels for the first experiment.
-- Define evaluation metrics and leakage-resistant splits.
-- Train and evaluate a first baseline before moving to a more advanced model.
+- Finalize the evaluation protocol, including precision, recall, F1-score, and overlapping-entity performance.
+- Decide how broad and fine-grained entity labels will be handled.
+- Prepare the saved dataset splits for model training.
+- Train and evaluate an initial entity-recognition baseline.
+- Compare baseline results with a span-based approach capable of recognizing overlapping entities.
+
 
 ### Reporting rule
 
