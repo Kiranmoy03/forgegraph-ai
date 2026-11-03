@@ -1,7 +1,8 @@
 # Literature review: from maintenance text to knowledge-graph retrieval
 
 **Project:** ForgeGraph AI  
-**Review date:** 4 November 2026  
+**Review period:** 3–4 November 2026  
+**Last updated:** 4 November 2026  
 **Status:** Initial background review; research questions and methods are provisional.
 
 ## 1. Why these papers
